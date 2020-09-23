@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /build
 COPY checksum checksum
-ADD https://github.com/yuriy-chumak/ol/archive/2.0.tar.gz ol.tar.gz
+ADD https://github.com/yuriy-chumak/ol/archive/2.1.1.tar.gz ol.tar.gz
 RUN sha256sum ol.tar.gz && sha256sum -c checksum
 RUN mkdir ol && tar -C ol --strip-components 1 -xf ol.tar.gz
 WORKDIR /build/ol
